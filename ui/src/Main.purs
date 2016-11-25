@@ -21,10 +21,8 @@ import App.Effects (AppEffects)
 
 -- | App configuration
 config
-    :: forall eff
-     . State
-    -> Eff (dom :: DOM, err :: EXCEPTION, ws :: WEBSOCKET, channel :: CHANNEL |
-                   eff) (Config State Action (dom :: DOM, ws :: WEBSOCKET | eff))
+    :: State
+    -> Eff _ (Config State Action AppEffects)
 config state = do
     -- | Create a signal of URL changes.
     urlSignal <- sampleUrl

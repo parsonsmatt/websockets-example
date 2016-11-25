@@ -8,11 +8,11 @@ import Control.Monad.Eff.Exception
 import WebSocket
 import Signal.Channel
 import Unsafe.Coerce
+import Pux
 
-type AppEffects eff =
+type AppEffects =
     ( dom :: DOM
-    , err :: EXCEPTION
-    , channel :: CHANNEL
     , ws :: WEBSOCKET
-    | eff
     )
+
+type AllEffects = CoreEffects AppEffects

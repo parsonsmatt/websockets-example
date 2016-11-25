@@ -17,9 +17,11 @@ import DOM (DOM)
 
 -- | Creates a websocket that
 createSocketSignal
-    :: forall eff
-     . Eff (err :: EXCEPTION, ws :: WEBSOCKET, channel :: CHANNEL | eff) (Tuple (Signal String)
-     (String -> Eff (dom :: DOM, err :: EXCEPTION, ws :: WEBSOCKET, channel :: CHANNEL | eff) Unit))
+    :: forall eff foo
+     . Eff _ (Tuple
+            (Signal String)
+            (String -> Eff _ Unit)
+            )
 createSocketSignal = do
     chan <- Chan.channel ""
 

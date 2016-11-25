@@ -17,7 +17,7 @@ import WebSocket
 import App.Counter as Counter
 import App.NotFound as NotFound
 import App.Routes (Route(Home, NotFound))
-import App.Effects (AppEffects)
+import App.Effects (AppEffects, AllEffects)
 
 data Action
     = Child Counter.Action
@@ -30,8 +30,7 @@ type State =
     { route :: Route
     , count :: Counter.State
     , messages :: Array String
-    , sendSocket :: forall eff. String -> Eff (dom :: DOM, err :: EXCEPTION, ws ::
-                                              WEBSOCKET, channel :: CHANNEL | eff) Unit
+    , sendSocket :: String -> Eff AllEffects Unit
     }
 
 init :: State
@@ -44,8 +43,8 @@ init =
 
 update
     :: Action
-     -> State
-     -> EffModel State Action (dom :: DOM, ws :: WEBSOCKET)
+    -> State
+    -> EffModel State Action AppEffects
 update Noop state = noEffects state
 update (PageView route) state =
     noEffects $ state { route = route }
@@ -56,7 +55,7 @@ update (ServerRecv str) state =
 update (ServerSend str) state =
     { state: state
     , effects: [ do
-        liftEff $ state.sendSocket str
+        liftEff (state.sendSocket str)
         pure Noop
         ]
     }
