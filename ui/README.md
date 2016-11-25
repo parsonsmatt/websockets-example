@@ -1,4 +1,4 @@
-# pux-starter-app
+# pux-starter-app, WebSockets enabled
 
 Starter [Pux](https://github.com/alexmingoia/purescript-pux/) application using
 webpack with hot-reloading and time-travel debug using
