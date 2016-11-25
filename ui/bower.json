@@ -11,7 +11,8 @@
     "purescript-pux": "^7.0.0",
     "purescript-pux-devtool": "^4.1.0",
     "purescript-websocket-simple": "^1.0.0",
-    "purescript-signal": "^8.0.0"
+    "purescript-signal": "^8.0.0",
+    "purescript-debug": "^2.0.0"
   },
   "resolutions": {
     "purescript-dom": "^3.1.0"

@@ -29,19 +29,26 @@
   },
   "dependencies": {
     "bower": "^1.7.9",
+    "bufferutil": "^1.2.1",
     "connect-history-api-fallback": "^1.2.0",
     "express": "^4.13.4",
+    "fs": "0.0.1-security",
     "html-webpack-plugin": "^2.15.0",
     "http-server": "^0.9.0",
-    "purescript": "^0.10.1",
+    "json-loader": "^0.5.4",
+    "purescript": "^0.10.2",
     "purescript-psa": "^0.3.9",
     "purs-loader": "^2.0.0",
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
     "rimraf": "^2.5.2",
-    "webpack": "^2.1.0-beta.25"
+    "tls": "0.0.1",
+    "utf-8-validate": "^1.2.1",
+    "webpack": "^2.1.0-beta.25",
+    "ws": "^1.1.1"
   },
   "devDependencies": {
+    "json-loader": "^0.5.4",
     "source-map-loader": "^0.1.5",
     "webpack-dev-middleware": "^1.8.3",
     "webpack-hot-middleware": "^2.12.2"

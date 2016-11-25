@@ -8,16 +8,5 @@
         </div>
         <script src="app.js">
         </script>
-        <script>
-function createSocket() {
-    var ws = new WebSocket("ws://localhost:8080");
-    ws.onchange = function(x) {
-        console.log(x.data);   
-    };
-    return ws;
-}
-
-
-        </script>
     </body>
 </html>

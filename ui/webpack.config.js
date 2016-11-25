@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+require('json-loader');
 
 var port = process.env.PORT || 3000;
 
@@ -17,6 +18,7 @@ var config = {
   },
   module: {
     loaders: [
+      { test: /\.json$/, loader: 'json-loader' },
       { test: /\.js$/, loader: 'source-map-loader', exclude: /node_modules|bower_components/ },
       {
         test: /\.purs$/,
@@ -64,6 +66,12 @@ var config = {
     ],
     extensions: ['.js', '.purs']
   },
+  node: {
+    console: true,
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
+  }
 };
 
 // If this file is directly run with node, start the development server
