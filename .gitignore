@@ -11,3 +11,5 @@ exes
 *.hp
 *.prof
 *.ps
+ui/bower_components/
+ui/output/
