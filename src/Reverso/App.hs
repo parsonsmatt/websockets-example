@@ -1,4 +1,4 @@
-module WebRepl.App where
+module Reverso.App where
 
 import           Protolude
 

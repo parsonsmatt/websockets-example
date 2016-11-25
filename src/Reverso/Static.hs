@@ -1,4 +1,4 @@
-module WebRepl.Static where
+module Reverso.Static where
 
 import           Protolude
 
