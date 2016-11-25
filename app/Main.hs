@@ -2,9 +2,9 @@ module Main where
 
 import           Protolude
 
-import qualified WebRepl
+import qualified Reverso
 
 main :: IO ()
 main = do
-  putText "WebRepl"
-  WebRepl.application
+    putText "Reverso"
+    Reverso.application

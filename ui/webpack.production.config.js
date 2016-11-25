@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+require('json-loader');
 
 module.exports = {
   entry: [ path.join(__dirname, 'support/index.js') ],
@@ -11,6 +12,7 @@ module.exports = {
   },
   module: {
     loaders: [
+      { test: /\.json$/, loader: 'json-loader' },
       {
         test: /\.purs$/,
         loader: 'purs-loader',
@@ -49,5 +51,11 @@ module.exports = {
       'bower_components'
     ],
     extensions: ['.js', '.purs']
+  },
+  node: {
+    console: true,
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
   }
 };
