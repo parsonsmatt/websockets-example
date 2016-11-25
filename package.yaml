@@ -1,0 +1,41 @@
+name:                websockets-test
+version:             0.1.0.0
+synopsis:            Simple project template from stack
+description:         Please see README.md
+homepage:            https://github.com/githubuser/websockets-test#readme
+license:             BSD3
+author:              Author name here
+maintainer:          example@example.com
+copyright:           2016 Author name here
+category:            Web
+
+ghc-options:
+  - -Wall
+
+default-extensions:
+  - OverloadedStrings
+  - RecordWildCards
+  - NoImplicitPrelude
+  - LambdaCase
+  - FlexibleContexts
+
+dependencies:
+  - base >= 4.7 && < 5
+  - protolude
+  - text
+  - wai
+  - wai-app-static
+  - wai-extra
+  - wai-websockets
+  - warp
+  - websockets
+
+library:
+  source-dirs: src
+
+executables:
+  server:
+    source-dirs:      app
+    main:             Main.hs
+    dependencies:
+      - websockets-test
